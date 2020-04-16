@@ -12,6 +12,10 @@ body {
   font-family: 'Montserrat', sans-serif;
 }
 
+a{
+  text-decoration: none;
+  color: black;
+}
 
 header {
   background-color: #eee;
@@ -29,8 +33,7 @@ header .container {
 }
 
 header .container img {
-  width: 250px;
-  height: 100px;
+  width: 200px;
   padding: 15px 0;
 }
 
@@ -47,15 +50,16 @@ header nav ul li {
 header nav ul li a {
   text-decoration: none;
   text-transform: uppercase;
-  color: white;
+  color: gray;
   font-size: 14px;
   padding: 15px;
   font-weight: bold;
 
   border-radius: 6px;
-  transition: all 250ms linear 0s;
   margin-right: 5px;
+  transition: all 250ms linear 0s;
 }
+
 
 header nav ul li a:hover {
   background: lightgray;
@@ -172,4 +176,5 @@ main {
 footer {
   margin-top: 64px;
   text-align: center;
+  color: black;
 }
