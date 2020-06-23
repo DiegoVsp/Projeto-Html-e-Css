@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Gera Senha</title>
+</head>
+
+<body>
+
+  <div class="campo">
+    <h1>Gerador de Senhas</h1>
+    <input type="text" id="res" placeholder="Create Password" readonly="">
+    <div id="btn" onclick="gerar()">Generate</div>
+  </div>
+  
+  <script>
+    function gerar() {
+      let char = "0123456789ABCDEFGHIJKLMNOPQRESTUVXYWZabcdevghijklmnopqrstuvxywz"
+      let passwordLength = 16;
+      let password = "";
+
+      for (let i = 0; i < passwordLength; i++) {
+        let random = Math.floor(Math.random() * char.length);
+        password += char.substring(random, random + 1);
+      }
+      document.querySelector("#res").value = password
+    }
+  </script>
+</body>
+
+</html>

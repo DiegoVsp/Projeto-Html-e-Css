@@ -1,0 +1,59 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  /* tira a seleção ao clicar duas vezes em cima  */
+  user-select: none;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: #f8f8f8;
+}
+.campo {
+  position: relative;
+  width: 450px;
+}
+.campo h1 {
+  font-size: 28px;
+  color: #333;
+}
+.campo input {
+  position: relative;
+  width: 100%;
+  height: 60px;
+  border: none;
+  margin: 15px 0 20px;
+  background: transparent;
+  /* retira seleção campo */
+  outline: none;
+  padding: 0 20px;
+  font-size: 24px;
+  /* espaçamento entre letras */
+  letter-spacing: 4px; 
+  border-radius: 8px;
+  color: #333;
+  /* A presença da palavra-chave inset muda a sombra para dentro da moldura */
+  box-shadow: -4px -4px 10px rgba(255, 255, 255, 1),
+              inset 4px 4px 1px rgba(0, 0, 0, 0.05),
+              inset -4px -4px 10px rgba(255, 255, 255, 1),
+              4px 4px 1px rgba(0, 0, 0, 0.05);
+}
+.campo input::placeholder {
+letter-spacing: 0px;
+}
+.campo #btn {
+  position: relative;
+  cursor: pointer;
+  color:#fff;
+  background-color: #333;
+  font-size: 24px;
+  display: inline-block;
+  padding: 10px 15px;
+  border-radius: 8px;
+}
+.campo #btn:active {
+  background: #9c27b0;
