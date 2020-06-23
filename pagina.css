@@ -1,7 +1,9 @@
 * {
   box-sizing: border-box;
   margin: 0;
-  padding: 0;
+  padding: 0;  
+  scroll-behavior: smooth ;
+  font-family: 'Poppins', sans-serif;
   outline: 0;
 }
 
@@ -10,96 +12,73 @@ html {
 }
 
 html,
-body {
-  height: 50vh;
-  font-family: 'Montserrat', sans-serif;
+body {    
   text-rendering: optimizeLegibility;
-
 }
 
 body {
   font-size: 1.5rem;
 }
 
-a {
-  text-decoration: none;
-  color: black;
-}
+/* background-color: rgba(36, 35, 35, 1); */
 
-header {
-  height: 20vh;
-}
-
-/* background-color: rgba(36, 35, 35, 1);
-  position: fixed; */
-/*menu fixo*/
-/* width: 100vw;
-  top: 0;
-  z-index: 111111;
-  height: 20vh; */
-header .container {
+.header{  
+  width: 100%;  
+  height: 15vh;
+  padding: 0 100px;
   display: flex;
   position: fixed;
   align-items: center;
-  justify-content: space-evenly;
-
-  width: 100%;
-  margin: auto;
+  justify-content: space-between;
   background-color: rgba(36, 35, 35, 1);
   z-index: 10000;
 }
-
-header .container img {
+a {
+  color: rgb(255, 197, 6);
+  text-decoration: none;
+}
+.header img {
   width: 200px;
-  padding: 15px 0;
+  padding: 5px 0;
 }
 
-header .menu-section {}
-
-header nav ul {
+.header nav ul {
+  position: relative;
   display: flex;
-
 }
 
-
-header nav ul li {
+.header nav ul li {
+  position: relative;
   list-style: none;
 }
 
-header nav ul li a {
+.header nav ul li a {
+  position: relative;
   text-decoration: none;
   text-transform: uppercase;
-  color: gray;
+  color: rgb(255, 197, 6);
   font-size: 1.4rem;
-  padding: 15px;
+  padding: 10px 25px;
   font-weight: bold;
 
-  border-radius: 6px;
-  margin-right: 5px;
+  border-radius: 5px;
+  margin-right: 15px;
   transition: all 250ms linear 0s;
 }
 
 
-header nav ul li a:hover {
-  background: lightgray;
+.header nav ul li a:hover {
+  color:#333 ;
+  background: rgb(255, 197, 6);
 }
 
-section.logo {
-  height: 80vh;
-  display: flex;
-  position: relative;
-  margin: 0;
-  padding: 20px;
-  z-index: 10;
+section.logo{
+  min-height: 70vh;
+  /* position: relative; */
+  display: flex;  
+  padding: 150px 0;
+  /* z-index: 10; */
 }
-
-section.logo p {
-  color: #c3c3c3;
-  font-size: 1.8rem;
-  line-height: 3.2rem;
-  margin: 10px 0px 0px;
-}
-
 section.logo .container {
   width: 90%;
   max-width: 980px;
@@ -107,18 +86,27 @@ section.logo .container {
   display: flex;
 }
 
+section.logo p {
+  color: #333;
+  font-size: 1.8rem;
+  letter-spacing: 2px;
+  line-height: 3.2rem;
+  margin: 10px 0px 0px;
+}
 .logo .container img {
   width: 400px;
   margin: auto;
+  /* margin: auto 30px; */
   border-radius: 50px
 }
 
 .botao {
   display: inline-block;
-  color: #FFF;
-  background-color: rgb(100, 65, 65);
+  color: #333;
+  font-weight: bold;
+  background-color: rgb(255, 197, 6);
   margin: 55px 0px 0px;
-  padding: 2% 10%;
+  padding: 15px 20px;
   text-decoration: none;
   border-radius: 8px;
   transition: all 150ms linear 0s;
@@ -126,28 +114,27 @@ section.logo .container {
 
 .botao:hover {
   opacity: 0.9;
-  font-weight: bold;
 }
+
 
 main {
   margin-bottom: 80px;
 }
-
 .produtos {
   width: 90%;
   max-width: 980px;
   margin: auto;
 
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  /*Arrumando layout grid*/
+  grid-gap: 20px;
 
 }
 
 .texto-medio {
   font-size: 1.6rem;
   line-height: 2.6rem;
-
 }
 
 .produto {
@@ -189,6 +176,8 @@ main {
 }
 
 .titulo {
+  font-size: 2.5rem;
+  text-align: center;
   margin-bottom: 20px;
 }
 
@@ -213,9 +202,9 @@ main {
   background-color: green;
 }
 
-footer {
+footer {  
   display: flex;
-  height: 10rem;
+  height: 6vh;
   justify-content: center;
   align-items: center;
   color: #cecece;
