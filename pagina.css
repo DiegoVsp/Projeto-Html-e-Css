@@ -155,8 +155,8 @@ main {
 
 .imagem {
   width: 70%;
-  padding-top: 60%;
-  overflow: hidden;
+  padding-top: 70%;
+  /* overflow: hidden; */
   position: relative;
   border-radius: 6px;
 
@@ -218,11 +218,9 @@ footer {
     font-size: 50%;
   }
 
-
   .logo .container {
     flex-direction: column;
     text-align: center;
-
   }
 
   .logo .container img {
