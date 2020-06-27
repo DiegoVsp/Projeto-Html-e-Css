@@ -1,4 +1,5 @@
-const vetor = [1, 3, 5, 9, 6, 15, 21,0,76]
+
+const vetor = [1, 3, 5, 9, 6, 15, 21, 0, 76]
 
 
 for (let a = 0; a < vetor.length; a++) {
