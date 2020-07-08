@@ -1,0 +1,29 @@
+*
+{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.elementExample {
+  width: 200px;
+  height: 200px;
+  /* background-color: red; */
+  line-height: 200px; /*centraliza o texto dentro da div*/
+  color:#fff;
+  text-transform: uppercase;
+  text-align: center;
+  cursor: pointer;
+}
+.elementExample_first {
+background-color: purple;
+position: relative;
+top:200px;
+}
+.elementExample_last {
+  background-color: tomato;
+  position: relative;
+}
+.active {
+  z-index: 1;
+}
