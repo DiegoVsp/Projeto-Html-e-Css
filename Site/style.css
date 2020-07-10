@@ -77,6 +77,7 @@ header nav ul li a {
 }
 .banner .conteudo h1 {
   text-transform: uppercase;
+  /* color: #fff; */
 }
 .banner .conteudo a {
   background: #333;
