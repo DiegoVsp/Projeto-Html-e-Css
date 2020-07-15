@@ -13,6 +13,10 @@
 // }
 // Maior(9,5)
 
+
+
+
+
 // const resultado = entrada(1)
 // console.log(resultado)
 
@@ -49,6 +53,11 @@
 //   }
 // }
 
+
+
+
+
+
 // exibir(5)
 // function exibir(tamanho) {
 //   for (let i = 0 ; i<= tamanho; i++){
@@ -59,6 +68,11 @@
 //     }
 //   }
 // }
+
+
+
+
+
 
 // const filmes = 
 //   {
@@ -76,6 +90,11 @@
 //   }
 // }
 // exibirPropri(filmes)
+
+
+
+
+
 
 // somar(10);
 
@@ -97,14 +116,30 @@
 // }
 
 
-const notas = [70, 70, 80, 60]
-const nNotas = 4
-media(notas)
-function media(notas) {
-  let soma = notas.reduce((atual, proximo) => {
-    console.log(atual,proximo)
-    return atual+=proximo
+
+
+const notas = [100, 60, 80, 60]
+const n = mediaAluno(notas)
+console.log(n)
+
+function mediaAluno(notas) {
+  const media = calcMedia(notas)
+  if (media < 60) return 'F';
+  if (media < 69) return 'E';
+  if (media < 79) return 'D';
+
+}
+function calcMedia(array) {
+  // let soma = 0
+  // for(let valor of array) {
+  //   soma +=valor
+  // }
+  // console.log(soma)
+  let soma = array.reduce((atual, proximo) => {
+    // console.log(atual,proximo)
+    return atual += proximo
   })
-   
-  console.log(Math.floor((soma)/nNotas))
+  return Math.floor((soma) / array.length)
+
+
 }
