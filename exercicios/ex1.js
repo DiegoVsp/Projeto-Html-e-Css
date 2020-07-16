@@ -118,28 +118,80 @@
 
 
 
-const notas = [100, 60, 80, 60]
-const n = mediaAluno(notas)
-console.log(n)
+// const notas = [100, 60, 80, 60]
+// const n = mediaAluno(notas)
+// console.log(n)
 
-function mediaAluno(notas) {
-  const media = calcMedia(notas)
-  if (media < 60) return 'F';
-  if (media < 69) return 'E';
-  if (media < 79) return 'D';
+// function mediaAluno(notas) {
+//   const media = calcMedia(notas)
+//   if (media < 60) return 'F';
+//   if (media < 69) return 'E';
+//   if (media < 79) return 'D';
 
+// }
+// function calcMedia(array) {
+//   // let soma = 0
+//   // for(let valor of array) {
+//   //   soma +=valor
+//   // }
+//   // console.log(soma)
+//   let soma = array.reduce((atual, proximo) => {
+//     // console.log(atual,proximo)
+//     return atual += proximo
+//   })
+//   return Math.floor((soma) / array.length)
+
+// }
+
+
+
+
+// exibirAsterisco(3)
+
+// function exibirAsterisco(n) {
+//   let inicio = ''
+
+//   for(let i = 0; i<= n; i++) {
+//     console.log(inicio)
+//     inicio += '*'
+//   }
+// }
+
+
+// NÚMEROS PRIMOS
+// numerosPrimos(15)
+// function numerosPrimos(n) {
+//   for (let i = 2; i <= n; i++) {
+//     let ePrimo = true
+
+//     for (let divisor = 2; divisor < i; divisor++) {
+//       if (i % divisor === 0) {
+//         ePrimo = false
+//         break;
+//       }      
+//     }
+//     if(ePrimo){
+//       console.log(i)
+//     }
+//   }
+// }
+
+
+
+numerosPrimos(15)
+function numerosPrimos(n) {
+  for (let i = 2; i <= n; i++) {
+    
+    if(isPrimo(i)){
+      console.log(i)
+    }
+  }
 }
-function calcMedia(array) {
-  // let soma = 0
-  // for(let valor of array) {
-  //   soma +=valor
-  // }
-  // console.log(soma)
-  let soma = array.reduce((atual, proximo) => {
-    // console.log(atual,proximo)
-    return atual += proximo
-  })
-  return Math.floor((soma) / array.length)
-
-
+function isPrimo(i) {
+  for (let divisor = 2; divisor < i; divisor++) {
+    if (i % divisor === 0) {
+      return false
+    }      
+  }
+  return true
 }
