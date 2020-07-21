@@ -178,20 +178,33 @@
 
 
 
-numerosPrimos(15)
-function numerosPrimos(n) {
-  for (let i = 2; i <= n; i++) {
+// numerosPrimos(15)
+// function numerosPrimos(n) {
+//   for (let i = 2; i <= n; i++) {
     
-    if(isPrimo(i)){
-      console.log(i)
-    }
-  }
-}
-function isPrimo(i) {
-  for (let divisor = 2; divisor < i; divisor++) {
-    if (i % divisor === 0) {
-      return false
-    }      
-  }
-  return true
-}
+//     if(isPrimo(i)){
+//       console.log(i)
+//     }
+//   }
+// }
+// function isPrimo(i) {
+//   for (let divisor = 2; divisor < i; divisor++) {
+//     if (i % divisor === 0) {
+//       return false
+//     }      
+//   }
+//   return true
+// }
+
+
+// function contador(n){
+//   if(n<1){
+//     return []
+//   }else {
+//     let contadorN = contador(n-1);
+//     contadorN+= n;
+//     return contadorN
+//   }
+// }
+// console.log(contador(5))
+
