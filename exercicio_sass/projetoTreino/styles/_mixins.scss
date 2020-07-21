@@ -1,0 +1,10 @@
+@mixin flexCenter($direction: column) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: $direction;
+}
+
+@function weight($weight-name) {
+  @return map-get($font, $weight-name )
+}
