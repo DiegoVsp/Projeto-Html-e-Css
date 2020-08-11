@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div class="container">
+    <button onclick="criarQuadrado()">Criar</button>
+    <div class="box"></div>
+  </div>
+
+  <script>
+    function criarQuadrado() {
+      var quadrado = document.createElement('div');
+      quadrado.style.height = '100px';
+      quadrado.style.width = '100px';
+      quadrado.style.backgroundColor = '#F32';
+      quadrado.style.margin = '5px'
+
+      quadrado.addEventListener('mouseover',function(){
+        quadrado.style.backgroundColor = getRandomColor()
+      })
+      var box = document.querySelector('.box')
+      box.appendChild(quadrado)
+      
+    }
+
+    function getRandomColor() {
+      var letters = "0123456789ABCDEF";
+      var color = "#";
+      for (var i = 0; i < 6; i++) {
+        color += letters[Math.floor(Math.random() * 16)];
+      }
+      return color;
+    }
+    var newColor = getRandomColor(); // #E943F0
+  </script>
+</body>
+
+</html>
