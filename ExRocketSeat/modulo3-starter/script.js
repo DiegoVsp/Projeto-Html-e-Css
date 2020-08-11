@@ -18,8 +18,8 @@ function mostrar(){
 
     // colocando um texto dentro de a
     var linkText = document.createTextNode(' Excluir');
-
     linkElement.appendChild(linkText);
+    
     li.appendChild(todoText);
     li.appendChild(linkElement);
     ul.appendChild(li);

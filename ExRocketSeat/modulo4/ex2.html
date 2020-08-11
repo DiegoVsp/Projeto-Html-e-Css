@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <input type="text" name="user">
+  <button onclick="">Adicionar</button>
+  <ul></ul>
+
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script>
+    var input = document.querySelector('input');
+    var botao = document.querySelector('button');
+    var ul = document.querySelector('ul');
+
+    botao.onclick = pegaDados
+    
+    function pegaDados() {
+      var nome = input.value;
+      carregar()
+       axios.get(`https://api.github.com/users/${nome}/repos`)
+      .then(response => prencherComRep(response.data))
+      .catch(error => erro(error)
+      )
+    }
+
+    function carregar() {
+      var li = document.createElement('li')
+      var text = document.createTextNode('...loading')
+
+      li.appendChild(text)
+      ul.appendChild(li)
+    }
+
+    function erro() {
+      ul.innerHTML='';
+      var vazio = input.value;
+      var msg =''
+      if(vazio == '') {
+        msg = "Preencha o Usuário"
+      }else{
+        msg = "usuário não encontrado"
+      }
+
+      var text = document.createTextNode(msg);
+      var liE = document.createElement('li');
+      liE.style.color= "yellow";
+      liE.style.backgroundColor="#F00";
+      liE.style.width = '220px';
+      liE.appendChild(text)
+      ul.appendChild(liE);
+    }
+
+    
+    function prencherComRep(repositorios) {
+      ul.innerHTML ='';
+      for(repo of repositorios) {
+        const rep = document.createTextNode(repo.name);
+        const repItem = document.createElement('li');
+
+        repItem.appendChild(rep);
+        ul.appendChild(repItem);
+      }
+    }
+  </script>
+</body>
+
+</html>
