@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Map, Filter e Reduce</title>
+</head>
+<body>
+  
+  <script>
+    const numeros = [2,3,6,7,14,22,33,44]
+    // let novoArray = []
+    // for(let i =0;i<numeros.length;i++){
+    //   novoArray.push(numeros[i]*2)
+    // }
+    // console.log(numeros)
+    // console.log(novoArray)
+
+    // map
+    // const n = numeros.map(n => n*2)
+    //   const n = numeros.map(function(numero){
+    //   return numero * 2;
+    // })
+    // console.log('n: ', n);
+
+    // const nomes = ['Fernando', 'Davi', 'Rafael', 'Diego']
+
+    // const names = nomes.map(n => n.toLowerCase() )
+    // console.log(names)
+
+
+    // FILTER
+
+    // let multiplos = n => n%2 === 0;
+    // let res = numeros.filter(multiplos)
+    // console.log(res)
+
+    // const arrayMapFilter = numeros.filter(n => n % 2 === 0).map(n=>n*2)
+    // console.log('mapFilter',arrayMapFilter)
+
+
+    // REDUCE
+    // soma = 0;
+    // for(let i = 0; i<numeros.length;i++){
+    //   soma+=numeros[i]
+    //   console.log('com FOR ' ,soma)
+    // }
+
+    // let res = numeros.reduce((acumulador, atual)=>
+    //   acumulador+atual
+      
+    // ,0)
+    // console.log(res)
+
+    const Pessoas = [
+    {
+        nome: 'Diego',
+        idade: 29
+      },
+      {
+        nome: 'Lucas',
+        idade: 14
+      },
+      {
+        nome: 'Fernando',
+        idade: 18
+      },
+      {
+        nome: 'Isa',
+        idade: 10
+      }
+    ]
+    const p = Pessoas.reduce(function(acc, atual){ 
+      const propMaiorOuMenor = atual.idade >=18 ? 'maiores':'menores';
+
+      acc[propMaiorOuMenor].push(atual)
+      return acc
+
+    }, {maiores:[],menores:[]})
+ console.log(p)
+  </script>
+</body>
+</html>
