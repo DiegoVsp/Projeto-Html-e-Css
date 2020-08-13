@@ -67,6 +67,7 @@ var usuarios = [
  ];
 
  for(user of usuarios) {
-   console.log(`O ${user.nome} possui as habilidades: ${user.habilidades.join(', ')}`)
+  var {nome, habilidades} = user
+   console.log(`O ${nome} possui as habilidades: ${habilidades.join(', ')}`)
  }
  
