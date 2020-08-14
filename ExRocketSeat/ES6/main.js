@@ -1,38 +1,38 @@
-class List {
-  constructor(){
-    this.data = [];
-  }
-  add(data){
-    this.data.push(data)
-    console.log(this.data);
-  }
-}
+// class List {
+//   constructor(){
+//     this.data = [];
+//   }
+//   add(data){
+//     this.data.push(data)
+//     console.log(this.data);
+//   }
+// }
 
-class TodoList extends List {
-  constructor(){
-    super();
+// class TodoList extends List {
+//   constructor(){
+//     super();
 
-    this.usuario = 'Diego';
-  }
-  mostraUsuario(){
-    console.log(this.usuario)
-  }
-}
-var MinhaLista = new TodoList();
+//     this.usuario = 'Diego';
+//   }
+//   mostraUsuario(){
+//     console.log(this.usuario)
+//   }
+// }
+// var MinhaLista = new TodoList();
 
-document.getElementById('novotodo').onclick = function(){
-  MinhaLista.add('Novo Todo');
-}
+// document.getElementById('novotodo').onclick = function(){
+//   MinhaLista.add('Novo Todo');
+// }
 
-MinhaLista.mostraUsuario();
+// MinhaLista.mostraUsuario();
 
-class Matematica {
+// class Matematica {
   
-  static soma(a,b){
-    return a+b;
-  }
-}
-console.log(Matematica.soma(1,2));
+//   static soma(a,b){
+//     return a+b;
+//   }
+// }
+// console.log(Matematica.soma(1,2));
 
 // CONST e LET
 
@@ -151,12 +151,24 @@ console.log(Matematica.soma(1,2));
 // console.log(`Meu nome é ${nome} e tenho ${idade} anos`)
 
 // Object Short Syntax
-const nome ='Diego';
-const idade = 23;
+// const nome ='Diego';
+// const idade = 23;
 
-const usuario = {
-  nome,
-  idade,
-  empresa:'Rocketseat',
-}
-console.log(usuario)
+// const usuario = {
+//   nome,
+//   idade,
+//   empresa:'Rocketseat',
+// }
+// console.log(usuario)
+
+
+// import { soma as somaFunc, subtracao } from './funcoes'
+// import * as funcoes from './funcoes'
+// import soma, {subtracao} from './funcoes';
+// import somaFunction from './soma'; //com export default
+
+// console.log(soma(5,2))
+// console.log(subtracao(5,2))
+
+// console.log(somaFunction(5,2))
+// console.log(funcoes.subtracao(5,3))
