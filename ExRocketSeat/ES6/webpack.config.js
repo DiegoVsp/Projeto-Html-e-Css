@@ -1,8 +1,11 @@
 module.exports = {
-  entry: './main.js', //arquivo js principal
+  entry: './src/main.js', //arquivo js principal
   output: {
-    path: __dirname,  //enviar arquivo convertido
+    path: __dirname + '/public', //enviar arquivo convertido
     filename: 'bundle.js'
+  },
+  devServer: {
+    contentBase: __dirname + '/public'
   },
   module: {
     rules: [ // como deve se comportar ao tentar importar arquivos .js

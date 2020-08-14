@@ -141,4 +141,15 @@
 // console.log(usuario)
 
 
+// modulo webpack
+
+// import ClasseUsuario from './functions';
+// import {idade as IdadeUsuario} from './functions';
+
+// alert(IdadeUsuario)
+// ClasseUsuario.info()
+
+
+
+
 

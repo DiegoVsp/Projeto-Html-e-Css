@@ -172,3 +172,11 @@
 
 // console.log(somaFunction(5,2))
 // console.log(funcoes.subtracao(5,3))
+
+
+// -------------EXERCICIO WEBPACK
+// import ClasseUsuario from './functions';
+// import {idade as IdadeUsuario} from './functions';
+
+// alert(IdadeUsuario)
+// ClasseUsuario.info()
