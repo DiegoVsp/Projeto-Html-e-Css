@@ -1,182 +1,86 @@
-// class List {
-//   constructor(){
-//     this.data = [];
-//   }
-//   add(data){
-//     this.data.push(data)
-//     console.log(this.data);
-//   }
-// }
+import api from './api'
 
-// class TodoList extends List {
-//   constructor(){
-//     super();
+class App {
+  constructor() {
+    this.repositories = [];
 
-//     this.usuario = 'Diego';
-//   }
-//   mostraUsuario(){
-//     console.log(this.usuario)
-//   }
-// }
-// var MinhaLista = new TodoList();
+    this.formEl = document.getElementById('repo-form');
+    this.inputEl = document.querySelector('input[name=repository]')
+    this.listEl = document.getElementById('repo-list');
 
-// document.getElementById('novotodo').onclick = function(){
-//   MinhaLista.add('Novo Todo');
-// }
+    this.registerHandles();
+  }
+  // registra os eventos
+  registerHandles() {
+    this.formEl.onsubmit = event => this.addRepository(event)
+  }
 
-// MinhaLista.mostraUsuario();
+  setLoading(loading = true) {
+    if(loading === true) {
+      let loadingEl = document.createElement('span')
+      loadingEl.appendChild(document.createTextNode('Carregando'))
+      loadingEl.setAttribute('id', 'loading');
 
-// class Matematica {
-  
-//   static soma(a,b){
-//     return a+b;
-//   }
-// }
-// console.log(Matematica.soma(1,2));
+      this.formEl.appendChild(loadingEl);
+    }else {
+      document.getElementById('loading').remove();
+    }
+  }
 
-// CONST e LET
-
-// function teste(x) {
-//   let y = 2;
-//   if( x> 5){
-//     let y=4
-//     console.log(x, y)
-//   }
-// }
-// teste(10)
-
-// OPERAÇÕES EM ARRAY
-// const arr = [1, 3, 4, 5, 8, 9];
-
-// const newArr = arr.map(function(item, index) {
-//   return item + index;
-// })
-// console.log(newArr)
-
-// const sum = arr.reduce(function(total, next){
-//   // console.log(total)
-//   return total + next
-// })
-// console.log(sum)
-
-// const filter = arr.filter(function(item){
-//   return item % 2 === 0;
-// })
-// console.log(filter)
-
-// const find = arr.find(function(item){
-//   return item === 4
-// })
-// console.log(find)
+  async addRepository(event) {
+    event.preventDefault();
+    const repoInput = this.inputEl.value;
+    if (repoInput.length === 0) {
+      return;
+    }
+    this.setLoading();
+    try {
+      const response = await api.get(`/repos/${repoInput}`);
+      const { name, description, html_url, owner: { avatar_url } } = response.data
+      console.log(response)
+      this.repositories.push({
+        name,
+        description,
+        avatar_url,
+        html_url,
+      });
+      this.inputEl.value = '';
+      this.render();
+    } catch (error) {
+      alert('O repositório não existe')
+    }
+    this.setLoading(false);
+  }
 
 
-// ARROW FUNCTION
+  render() {
+    this.listEl.innerHTML = '';
 
-// const arr = [1, 3, 4, 5, 8, 9];
+    this.repositories.forEach(repo => {
+      let imgEl = document.createElement('img');
+      imgEl.setAttribute('src', repo.avatar_url);
 
-// const newArray = arr.map(item => item * 2)
-// console.log(newArray)
+      let titleEl = document.createElement('strong');
+      titleEl.appendChild(document.createTextNode(repo.name));
 
-// const test = () => ({nome:'Diego'})
-// console.log(test())
+      let descriptionEl = document.createElement('p');
+      descriptionEl.appendChild(document.createTextNode(repo.description))
 
-// DESESTRUTURAÇÃO
-// const usuario = {
-//   nome:'Diego',
-//   idade:'28',
-//   endereco: {
-//     cidade:'Araraquara',
-//     estado:'São Paulo',
-//   },
-// };
+      let linkEl = document.createElement('a');
+      linkEl.setAttribute('target', '_blank');
+      linkEl.setAttribute('href', repo.html_url);
+      linkEl.appendChild(document.createTextNode('Acessar'))
 
-// const {nome, idade, endereco:{estado}} = usuario
-// console.log(nome)
-// console.log(idade)
-// console.log(estado)
+      let listItemEl = document.createElement('li');
+      listItemEl.appendChild(imgEl)
+      listItemEl.appendChild(titleEl)
+      listItemEl.appendChild(descriptionEl)
+      listItemEl.appendChild(linkEl)
 
-// function mostraNome({nome, idade}){
-//   console.log(nome, idade)
-// }
-// mostraNome(usuario)
-
-// REST
-
-// const usuario = {
-//   nome: 'Diego',
-//   idade: '23',
-//   empresa: 'Rocketseat'
-// };
-// const {nome, ...resto} = usuario;
-// console.log(nome);
-// console.log(resto)
-
-// console.log('---------')
-
-// const arr = [1,2,3,4];
-// const [a,b,...c]=arr;
-
-// console.log(a)
-// console.log(b)
-// console.log(c)
-
-// console.log('---------')
-
-// function soma(...params){
-//   return params.reduce((total, next) => total+next);
-// }
-// console.log(soma(1,2,5,3))
-
-// Spread
-// console.log('----SPREAD-----')
-// const arr1 = [1,2,3]
-// const arr2 = [4,5,6]
-// const arr3 = [...arr1,...arr2]
-// console.log(arr3)
-
-// console.log('---------')
-// const usuario1 = {
-//   nome:'Diego',
-//   idade:'23',
-//   empresa:'Rocketseat',
-// };
-
-// const usuario2 = {...usuario1, nome:'Gabriel'}
-// console.log(usuario2)
-
-// Template Literals
-// const nome = "Diego";
-// const idade = 23;
-
-// console.log(`Meu nome é ${nome} e tenho ${idade} anos`)
-
-// Object Short Syntax
-// const nome ='Diego';
-// const idade = 23;
-
-// const usuario = {
-//   nome,
-//   idade,
-//   empresa:'Rocketseat',
-// }
-// console.log(usuario)
+      this.listEl.appendChild(listItemEl);
+    })
+  }
+}
 
 
-// import { soma as somaFunc, subtracao } from './funcoes'
-// import * as funcoes from './funcoes'
-// import soma, {subtracao} from './funcoes';
-// import somaFunction from './soma'; //com export default
-
-// console.log(soma(5,2))
-// console.log(subtracao(5,2))
-
-// console.log(somaFunction(5,2))
-// console.log(funcoes.subtracao(5,3))
-
-
-// -------------EXERCICIO WEBPACK
-// import ClasseUsuario from './functions';
-// import {idade as IdadeUsuario} from './functions';
-
-// alert(IdadeUsuario)
-// ClasseUsuario.info()
+new App();
