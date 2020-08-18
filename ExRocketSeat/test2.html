@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <input type="text" id="nome">
+  <button>Add</button>
+  <ul class="lista"></ul>
+
+  <script>
+    const n = document.querySelector('#nome');
+    const button = document.querySelector('button');
+    const ul = document.querySelector('.lista');
+
+    function criar(name) {
+      var li = document.createElement('li');
+      var nome = document.createTextNode(name);
+      li.appendChild(nome);
+      ul.appendChild(li)
+    }
+    
+    function mostrar(){
+      criar(n.value);
+      n.value = '';
+    }
+    button.addEventListener('click', mostrar)
+    // button.addEventListener('onclick', monstrar)
+  </script>
+</body>
+</html>
