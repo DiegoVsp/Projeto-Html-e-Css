@@ -16,6 +16,9 @@ const requireDir = require('require-dir');
 
 // iniciando o app
 const app = express();
+// permite o envio das informações no formato de json
+app.use(express.json())
+
 mongoose.set('useUnifiedTopology', true);
 // iniciando o database
 // mongoose.connect('mongodb://localhost:27017/nodeapi', {useNewUrlParser: true})
@@ -24,7 +27,6 @@ requireDir('./src/models');
 
 
 // Rotas
-
 app.use('/api', require('./src/routes'));
 
 app.listen(3001);
