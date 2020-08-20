@@ -10,6 +10,7 @@
 
 
 const express = require('express');
+const cors = require('cors')
 const mongoose = require('mongoose');
 const requireDir = require('require-dir');
 
@@ -18,6 +19,7 @@ const requireDir = require('require-dir');
 const app = express();
 // permite o envio das informações no formato de json
 app.use(express.json())
+app.use(cors());
 
 mongoose.set('useUnifiedTopology', true);
 // iniciando o database
