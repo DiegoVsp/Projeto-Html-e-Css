@@ -13,7 +13,8 @@ function mostrar(){
     var linkElement = document.createElement('a');
     linkElement.setAttribute('href','#');
 
-    var posicao = todos.indexOf(todo);    
+    var posicao = todos.indexOf(todo);   
+    
     linkElement.setAttribute('onclick','deleteTodo('+posicao+')')
 
     // colocando um texto dentro de a

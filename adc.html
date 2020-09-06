@@ -10,32 +10,35 @@
 
 <body>
   <div class="container">
-    <div>
-      <label for="numero">Digite um número</label>
-      <input class="num" type="text">
-
+    <div class="conteudo">
+      <div class="input">
+        <label for="numero">Digite um número</label>
+        <input class="numero" type="text">
+      </div>
+      <div class="buttons">
+        <button onclick="adicionar()">Adicionar</button>        
+        <button onclick="mostrar()">Ordenar</button>        
+      </div>
+      <div id="res"></div>
     </div>
-    <div>
-      <input type="button" value="Mostrar" onclick="mostrar()">
-      <input type="button" value="Adicionar" onclick="adicionar()">
-    </div>
-    <div id="res"></div>
   </div>
 
 
 
   <script>
-    let numero = document.querySelector('.num')
+    let numero = document.querySelector('.numero')
     let res = document.querySelector('#res')
     let vetor = []
 
     function adicionar() {
-      let n = Number(numero.value)
+
+      let n = Number(numero.value).toString()
 
       if (n > 0 && n <= 100) {
 
         vetor.push(n)
-        res.innerHTML = `<p>${vetor}</p>`
+        
+        res.innerHTML = `<p>${vetor.join(' ')}</p>`
 
       } else {
         alert(`O numero ${n} é inválido`)
@@ -47,7 +50,7 @@
     function mostrar() {
       let n = Number(numero.value)
       // let total = vetor.length
-
+      // let v = vetor.join(' ')
       for (let a = 0; a < vetor.length; a++) {
         for (let b = a + 1; b < vetor.length; b++) {
           if (vetor[a] > vetor[b]) {
@@ -58,7 +61,8 @@
         }
       }
       res.innerHTML = ""
-      res.innerHTML += `<p>${vetor}</p> `;
+      res.innerHTML += `<p>${vetor.join(' ')}</p> `;
+      
     }
   </script>
 </body>
