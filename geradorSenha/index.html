@@ -13,10 +13,14 @@
   <div class="campo">
     <h1>Gerador de Senhas</h1>
     <input type="text" id="res" placeholder="Create Password" readonly="">
+    <img src="copy.png" alt="copiar" class="copy" onclick="copyPassword()">
     <div id="btn" onclick="gerar()">Generate</div>
   </div>
-  
+  <div class="alertBox"></div>
+
   <script>
+    let alertBox = document.querySelector('.alertBox')
+
     function gerar() {
       let char = "0123456789ABCDEFGHIJKLMNOPQRESTUVXYWZabcdevghijklmnopqrstuvxywz"
       let passwordLength = 16;
@@ -27,6 +31,17 @@
         password += char.substring(random, random + 1);
       }
       document.querySelector("#res").value = password
+      alertBox.innerHTML = "New Password Copied: <br>" + password
+    }
+    function copyPassword() {
+      let copyPassText = document.querySelector("#res")
+      copyPassText.select();
+      copyPassText.setSelectionRange(0, 9999);
+      document.execCommand('copy');
+      alertBox.classList.toggle('active')
+      setTimeout(() => {
+        alertBox.classList.toggle('active')
+      }, 2000);
     }
   </script>
 </body>
