@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Crud with Javascript</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <table>
+    <tr>
+      <td>
+        <form onsubmit="event.preventDefault();onFormSubmit();" autocomplete="off">
+          <div>
+            <label for=""> Nome: </label><label class="validation-error hide" id="fullNameValidationError">campo obrigatório</label>
+            <input type="text" name="nomeCompleto" id="nomeCompleto">
+          </div>
+          <div>
+            <label for=""> Código: </label>
+            <input type="text" name="codigo" id="codigo">
+          </div>
+          <div>
+            <label for=""> Salário: </label>
+            <input type="text" name="salario" id="salario">
+          </div>
+          <div>
+            <label for=""> Cidade: </label>
+            <input type="text" name="cidade" id="cidade">
+          </div>
+          <div class="form-action-buttons">
+            <input type="submit" value="Enviar">
+          </div>
+        </form>
+      </td>
+
+      <td>
+        <table class="lista" id="listaEmpregados">
+          <thead>
+            <tr>
+              <th>Nome Completo</th>
+              <th>Código</th>
+              <th>Salário</th>
+              <th>Cidade</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+
+          </tbody>
+        </table>
+      </td>
+    </tr>
+  </table>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
