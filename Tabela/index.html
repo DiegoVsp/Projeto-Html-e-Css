@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tabelas</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div id="dfPessoas">
+    <form name="fPessoas">
+      <label>Nome</label><br />
+      <input type="text" name="txtNome"><br /><br />
+      <label>Sobrenome</label><br />
+      <input type="text" name="txtSobrenome"><br /><br />
+      <label>Email</label><br />
+      <input type="text" name="txtEmail"><br /><br />
+      <label>Altura</label><br />
+      <input type="text" name="txtAltura"><br /><br />
+      <label>Sexo</label><br />
+      <input type="text" name="txtSexo"><br /><br />
+      <input type="button"
+        onclick="CadastrarPessoas(txtNome.value,txtSobrenome.value,txtEmail.value,txtAltura.value,txtSexo.value)"
+        value="Adicionar">
+    </form>
+  </div>
+  <br /><br />
+  <div id="dtPessoas">
+    <table id="tbPessoas">
+      <thead>
+        <tr>
+          <td>Código</td>
+          <td>Nome</td>
+          <td>Sobrenome</td>
+          <td>E-mail</td>
+          <td>Altura</td>
+          <td>Sexo</td>
+        </tr>
+      </thead>
+    </table>
+  </div>
+  <script src="script.js"></script>
+</body>
+
+</html>
