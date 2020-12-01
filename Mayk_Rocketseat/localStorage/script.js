@@ -1,4 +1,5 @@
 let favorites = JSON.parse(localStorage.getItem('favorites')) || []
+
 const imageContainer = document.querySelector('.image')
 const button = document.querySelector('button')
 let allImages = document.querySelector('.all-images')
