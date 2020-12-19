@@ -1,0 +1,101 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+main {
+  width: 100%;
+  height: 100vh;
+  
+  background: linear-gradient(to right, rgb(240, 194, 123), rgb(75, 18, 72));
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.boxForm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  background: #444;
+  min-height: 300px;
+  width: 500px;
+  border-radius: 15px;
+  padding: 20px;
+  margin: 10px;
+}
+.boxForm h1 {
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #f1f1f1;
+}
+.bx {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.boxCep {
+  grid-column: span 3;
+  width: 95%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+}
+.boxCep input {
+  text-transform: uppercase;
+  padding: 10px;
+  width: 100%;  
+  font-size: 1em;
+}
+.boxCep .botao {
+  display: block;
+  border-radius: 10px;
+
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #f1f1f1;
+
+  background-color: orange;
+  padding: 10px;
+  margin-left: 10px;
+}
+.campos {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 12px;
+}
+.campos input{
+  padding: 2px 5px;
+}
+.campos #end{
+  display: flex;
+}
+.campos #end #logradouro{
+  flex: 1;
+}
+.campos #city {
+  display: flex;
+  flex-wrap: wrap;
+}
+.campos #city #cidade{
+  flex: 1;
+}
+.campos #city #bairro{
+  flex: 1;
+}
+.campos #city #uf{
+  flex: 1;
+}
+.campos #city #d{
+  flex: 1;
+}
+
+
+
